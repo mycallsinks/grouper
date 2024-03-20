@@ -155,9 +155,40 @@ function generateGroups() {
 
 
 
+// // Initialize global counter for student numbering
+// let studentNumbering = 1;
+// // Initialize global counter for student numbering
+
+// // Function to display a group
+// function displayGroup(group, groupNumber) {
+//     const groupContainer = document.createElement('div');
+//     groupContainer.classList.add('group');
+//     groupContainer.innerHTML = `<h4>Group ${groupNumber}</h4>`;
+
+//     // Create title row
+//     const titleRow = document.createElement('div');
+//     titleRow.classList.add('title-row');
+//     titleRow.innerHTML = `<div class="title">First Name</div><div class="title">Last Name</div><div class="title">Student Number</div>`;
+//     groupContainer.appendChild(titleRow);
+
+//     // Iterate through each student in the group
+//     group.forEach(student => {
+//         const studentElement = document.createElement('div');
+//         const firstName = student.firstName || ''; // Check if firstName exists, otherwise use empty string
+//         const lastName = student.lastName || ''; // Check if lastName exists, otherwise use empty string
+//         const studentNum = student.studentNumber || ''; // Check if studentNumber exists, otherwise use empty string
+//         studentElement.classList.add('student-row');
+//         studentElement.innerHTML = `<div class="cell">${firstName}</div><div class="cell">${lastName}</div><div class="cell">${studentNum}</div>`;
+//         groupContainer.appendChild(studentElement);
+//         studentNumbering++; // Increment the student number for the next student
+//     });
+    
+//     document.getElementById('groupsContainer').appendChild(groupContainer);
+// }
+
+
 // Initialize global counter for student numbering
 let studentNumbering = 1;
-// Initialize global counter for student numbering
 
 // Function to display a group
 function displayGroup(group, groupNumber) {
@@ -176,11 +207,10 @@ function displayGroup(group, groupNumber) {
         const studentElement = document.createElement('div');
         const firstName = student.firstName || ''; // Check if firstName exists, otherwise use empty string
         const lastName = student.lastName || ''; // Check if lastName exists, otherwise use empty string
-        const studentNum = student.studentNumber || ''; // Check if studentNumber exists, otherwise use empty string
+        const studentNum = studentNumbering++; // Increment the student number and assign it
         studentElement.classList.add('student-row');
         studentElement.innerHTML = `<div class="cell">${firstName}</div><div class="cell">${lastName}</div><div class="cell">${studentNum}</div>`;
         groupContainer.appendChild(studentElement);
-        studentNumbering++; // Increment the student number for the next student
     });
     
     document.getElementById('groupsContainer').appendChild(groupContainer);
@@ -297,26 +327,5 @@ function processExcel(file) {
 }
 
 
-// automatically hide and unhide nav bar
-
-
-
-
-// jQuery to observe the closing and opening of the menu
-
-// var prevScrollpos = window.pageYOffset;
-// window.onscroll = function () {
-//   var currentScrollPos = window.pageYOffset;
-//   if (prevScrollpos > currentScrollPos) {
-//     $("nav").css("display", "flex");
-//     // $("header").css("opacity", "1");
-//     $("nav").css("flex-direction", "column");
-//   } else {
-
-//     $("nav").css("display", "none");
-//     // $("header").css("opacity", "0");
-//   }
-//   prevScrollpos = currentScrollPos;
-// };
 
 
