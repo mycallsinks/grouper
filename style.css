@@ -24,6 +24,10 @@
     flex-direction: row !important;
 }
 
+.container_holder{
+    padding: 0 5px;
+}
+
 
 
 .navbar-brand {
@@ -244,7 +248,7 @@ nav {
   }
 
   body {
-    background: linear-gradient(to right, rgba(255, 127, 95, 0.708), rgba(254, 180, 123, 0.702),rgba(255, 127, 95, 0.708), rgba(254, 180, 123, 0.702),rgba(255, 127, 95, 0.708), rgba(254, 180, 123, 0.702)); 
+    background: linear-gradient(to right, rgba(255, 127, 95, 0.708), rgba(254, 180, 123, 0.702),rgba(255, 127, 95, 0.708), rgba(254, 180, 123, 0.702),rgba(255, 127, 95, 0.708)); 
 } 
 
 .grouping .form-label{
