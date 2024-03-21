@@ -12,34 +12,38 @@
   width: 100%;
 }
 
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-
 
 .container_nav {
-    flex-direction: row !important;
+  flex-direction: row !important;
 }
 
-.container_holder{
-    padding: 0 5px;
+.container_holder {
+  padding: 0 5px;
+}
+
+
+nav{
+  padding: 5px 0px !important;
 }
 
 
 
 .navbar-brand {
-    /* color: rgb(5, 5, 82); */
-    font-weight: 900;
-    margin-right: 20px;
-    color: #0624b8;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  /* color: rgb(5, 5, 82); */
+  font-weight: 900;
+  margin-right: 20px;
+  color: #0624b8;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-.navbar .nav-link{
-    color: #fff
+.navbar .nav-link {
+  color: #fff;
 }
 nav .navbar-collapse {
   justify-content: flex-end !important;
@@ -87,9 +91,9 @@ nav .container-fluid {
   text-decoration: none; /* Remove default underline */
 }
 
-.form-label{
-    text-align: left !important;
-    width: 100%;
+.form-label {
+  text-align: left !important;
+  width: 100%;
 }
 
 /* grouping links */
@@ -129,7 +133,7 @@ nav .container-fluid {
   margin-top: 20px;
   display: flex;
   justify-content: center;
-  
+
   flex-wrap: wrap;
   gap: 20px;
 }
@@ -201,98 +205,91 @@ nav {
   margin: 10px 0;
   border-radius: 5px;
   background-color: rgba(255, 0, 0, 0.2);
-  background-color:rgba(0, 0, 255, 0.6);
-
+  background-color: rgba(0, 0, 255, 0.6);
 }
-
 
 /* import centering  */
 
 .option {
-    display: flex;
-    justify-content: center;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
-.option .grouping .inputs{
-    align-items: center;
-    display: flex;
-    justify-content: center;
+.option .grouping .inputs {
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
-
 
 .hidden {
-    transform: translateY(-100%);
-    transition: transform 0.3s ease-in-out;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
 }
-
-
 
 nav {
-    position: fixed !important;
-    /* width: 100%; */
-    max-width: 960px;
-    top: 0;
-    left: auto;
-    text-align: center;
-    z-index: 1000;
-    transition: all 0.3s ease-in-out;
-    margin: 10px  !important;
-   
-  }
-
-
-  body{
-    min-width: 420px !important;
-    
-  }
-
-  body {
-    background: linear-gradient(to right, rgba(255, 127, 95, 0.708), rgba(254, 180, 123, 0.702),rgba(255, 127, 95, 0.708), rgba(254, 180, 123, 0.702),rgba(255, 127, 95, 0.708)); 
-} 
-
-.grouping .form-label{
-    text-align: center !important;
+  position: fixed !important;
+  /* width: 100%; */
+  max-width: 960px;
+  top: 0;
+  left: auto;
+  text-align: center;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+  margin: 10px !important;
 }
 
-  .option {
-    margin-top: 80px;
-    min-width: 450px;
-  }
-
-
-  .aboutUs{
-    margin-top: 100px;
-    padding: 0 5px;
-  }
-
-  .aboutUs h2{
-    font-size: 1.5rem;
-  }
-
-.option p{
-    text-align: center;
+body {
+  min-width: 420px !important;
 }
 
-
-
-.holder .intro, .add_students{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1.3rem;
-    font-family: "Madimi One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+body {
+  background: linear-gradient(
+    to right,
+    rgba(255, 127, 95, 0.708),
+    rgba(254, 180, 123, 0.702),
+    rgba(255, 127, 95, 0.708),
+    rgba(254, 180, 123, 0.702),
+    rgba(255, 127, 95, 0.708)
+  );
 }
 
-
-  
-
-.opt_button{
-justify-content: center;
+.grouping .form-label {
+  text-align: center !important;
 }
 
+.option {
+  margin-top: 80px;
+  min-width: 450px;
+}
 
-.group_us_image{
+.aboutUs {
+  margin-top: 100px;
+  padding: 0 5px;
+}
+
+.aboutUs h2 {
+  font-size: 1.5rem;
+}
+
+.option p {
+  text-align: center;
+}
+
+.holder .intro,
+.add_students {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.3rem;
+  font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.opt_button {
+  justify-content: center;
+}
+
+.group_us_image {
   background: url(./favicon-16x16.png);
   height: 25px;
   width: 25px;

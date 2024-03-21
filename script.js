@@ -85,6 +85,14 @@ addDetails = () => {
 
 
 // Define a global variable to store the students array
+
+
+
+
+// validate first 
+
+
+
 const students = [];
 
 testingFuncs = (link) => {
@@ -155,36 +163,6 @@ function generateGroups() {
 
 
 
-// // Initialize global counter for student numbering
-// let studentNumbering = 1;
-// // Initialize global counter for student numbering
-
-// // Function to display a group
-// function displayGroup(group, groupNumber) {
-//     const groupContainer = document.createElement('div');
-//     groupContainer.classList.add('group');
-//     groupContainer.innerHTML = `<h4>Group ${groupNumber}</h4>`;
-
-//     // Create title row
-//     const titleRow = document.createElement('div');
-//     titleRow.classList.add('title-row');
-//     titleRow.innerHTML = `<div class="title">First Name</div><div class="title">Last Name</div><div class="title">Student Number</div>`;
-//     groupContainer.appendChild(titleRow);
-
-//     // Iterate through each student in the group
-//     group.forEach(student => {
-//         const studentElement = document.createElement('div');
-//         const firstName = student.firstName || ''; // Check if firstName exists, otherwise use empty string
-//         const lastName = student.lastName || ''; // Check if lastName exists, otherwise use empty string
-//         const studentNum = student.studentNumber || ''; // Check if studentNumber exists, otherwise use empty string
-//         studentElement.classList.add('student-row');
-//         studentElement.innerHTML = `<div class="cell">${firstName}</div><div class="cell">${lastName}</div><div class="cell">${studentNum}</div>`;
-//         groupContainer.appendChild(studentElement);
-//         studentNumbering++; // Increment the student number for the next student
-//     });
-    
-//     document.getElementById('groupsContainer').appendChild(groupContainer);
-// }
 
 
 // Initialize global counter for student numbering
@@ -276,56 +254,6 @@ document.getElementById('generateGroups').addEventListener('click', function() {
 
 // Event listener for the download button
 document.getElementById('downloadExcel').addEventListener('click', generateExcel);
-
-
-
-
-// excel importing
-// Event listener for file input change
-document.getElementById('inputGroupFile02').addEventListener('change', function (e) {
-    const file = e.target.files[0];
-    processExcel(file);
-});
-
-
-
-
-
-// debugging
-
-
-
-
-// Define the students array
-// const students = [];
-
-// Function to process the uploaded Excel file
-function processExcel(file) {
-    const reader = new FileReader();
-    reader.onload = function (e) {
-        const data = new Uint8Array(e.target.result);
-        const workbook = XLSX.read(data, { type: 'array' });
-        const sheet = workbook.Sheets[workbook.SheetNames[0]];
-        const excelData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
-
-        // Remove the header row
-        excelData.shift();
-
-        // Convert data to objects and push into students array
-        excelData.forEach(student => {
-            students.push({
-                firstName: student[0],
-                lastName: student[1],
-                studentNumber: student[2]
-            });
-        });
-
-        // Display groups
-        generateGroups();
-    };
-    reader.readAsArrayBuffer(file);
-}
-
 
 
 
