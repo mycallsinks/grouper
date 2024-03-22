@@ -250,18 +250,15 @@ document.getElementById('downloadExcel').addEventListener('click', generateExcel
 
 
 function generatePDF() {
-
     var { jsPDF } = window.jspdf;
-    // var pdf = new jsPDF();
     const doc = new jsPDF();
-    let yPos = 10;
 
+    // Data for the table
+    const data = [];
+    
     // Add column headers
-    doc.text('Group', 10, yPos);
-    doc.text('First Name', 40, yPos);
-    doc.text('Last Name', 70, yPos);
-    doc.text('Student Number', 100, yPos);
-    yPos += 10;
+    const headers = ['Group', 'First Name', 'Last Name', 'Student Number'];
+    data.push(headers);
 
     // Iterate through each group
     document.querySelectorAll('.group').forEach((groupContainer, groupNumber) => {
@@ -272,20 +269,24 @@ function generatePDF() {
             const firstName = cells[0].textContent.trim();
             const lastName = cells[1].textContent.trim();
             const studentNum = cells[2].textContent.trim();
-            
-            // Add student data to the PDF
-            doc.text((groupNumber + 1).toString(), 10, yPos);
-            doc.text(firstName, 40, yPos);
-            doc.text(lastName, 70, yPos);
-            doc.text(studentNum, 100, yPos);
-            yPos += 10;
+
+            // Add student data to the table
+            data.push([(groupNumber + 1).toString(), firstName, lastName, studentNum]);
         });
+    });
+
+    // Create the PDF table
+    doc.autoTable({
+        head: [headers],
+        body: data.slice(1), // Exclude headers from the body
+        startY: 20 // Start the table below the headers
     });
 
     // Save the PDF and trigger download
     doc.save('groups.pdf');
 }
 
-;
+// document.getElementById('downloadPDF').addEventListener('click', generatePDF);
+
 
 document.getElementById('downloadPDF').addEventListener('click', generatePDF);
