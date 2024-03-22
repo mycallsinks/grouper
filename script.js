@@ -72,14 +72,6 @@ addDetails = () => {
 
 }
 
-// function addDetails() {
-//     console.log('~Stuppid');
-// }
-
-
-
-
-
 
 // next step = to once we add them then will retrive randomly
 
@@ -246,6 +238,7 @@ function generateExcel() {
 document.getElementById('generateGroups').addEventListener('click', function() {
     // Show the download button
     document.getElementById('downloadExcel').style.display = 'block';
+    document.getElementById('downloadPDF').style.display = 'block';
     // Call the function to generate groups
     generateGroups();
 });
@@ -256,4 +249,43 @@ document.getElementById('generateGroups').addEventListener('click', function() {
 document.getElementById('downloadExcel').addEventListener('click', generateExcel);
 
 
+function generatePDF() {
 
+    var { jsPDF } = window.jspdf;
+    // var pdf = new jsPDF();
+    const doc = new jsPDF();
+    let yPos = 10;
+
+    // Add column headers
+    doc.text('Group', 10, yPos);
+    doc.text('First Name', 40, yPos);
+    doc.text('Last Name', 70, yPos);
+    doc.text('Student Number', 100, yPos);
+    yPos += 10;
+
+    // Iterate through each group
+    document.querySelectorAll('.group').forEach((groupContainer, groupNumber) => {
+        // Iterate through each student row in the group
+        groupContainer.querySelectorAll('.student-row').forEach(studentElement => {
+            // Extract student information from the row
+            const cells = studentElement.querySelectorAll('.cell');
+            const firstName = cells[0].textContent.trim();
+            const lastName = cells[1].textContent.trim();
+            const studentNum = cells[2].textContent.trim();
+            
+            // Add student data to the PDF
+            doc.text((groupNumber + 1).toString(), 10, yPos);
+            doc.text(firstName, 40, yPos);
+            doc.text(lastName, 70, yPos);
+            doc.text(studentNum, 100, yPos);
+            yPos += 10;
+        });
+    });
+
+    // Save the PDF and trigger download
+    doc.save('groups.pdf');
+}
+
+;
+
+document.getElementById('downloadPDF').addEventListener('click', generatePDF);

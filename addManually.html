@@ -39,6 +39,10 @@
     <!-- use version 0.20.1 -->
 <script lang="javascript" src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
 
+
+<!-- autable -->
+<!-- <script src="path/to/jspdf.plugin.autotable.js"></script> -->
+
     <!-- stylesheet link -->
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./style.css">
@@ -124,15 +128,21 @@
 
 
 
-    <div class="container here">
+   <div class="container here">
         <div class="input-group">
-
+            <!-- Additional elements if needed -->
         </div>
         <div id="groupsContainer">
-
+            <!-- Display groups here -->
         </div>
 
-        <button id="downloadExcel" class="bg-primary p-2">Download Excel File</button>
+        <div class="buttons">
+            
+            <button id="downloadExcel" class="bg-primary p-2">Download Excel File</button>
+            <button id="downloadPDF" class="bg-primary p-2" style="display: none;">Download PDF File</button>
+        </div>
+       
+
     </div>
 
 
@@ -151,9 +161,14 @@
         </script>
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+<!-- 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> -->
     <script src="./script.js"></script>
+    
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+ 
+   
     <!-- adding more studnets -->
 
 
