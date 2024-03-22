@@ -185,7 +185,7 @@ function displayGroup(group, groupNumber) {
         const studentElement = document.createElement('div');
         const firstName = student.firstName || ''; // Check if firstName exists, otherwise use empty string
         const lastName = student.lastName || ''; // Check if lastName exists, otherwise use empty string
-        const studentNum = studentNumbering++; // Increment the student number and assign it
+        const studentNum = student.studentNumber || ''; // Increment the student number and assign it
         studentElement.classList.add('student-row');
         studentElement.innerHTML = `<div class="cell">${firstName}</div><div class="cell">${lastName}</div><div class="cell">${studentNum}</div>`;
         groupContainer.appendChild(studentElement);
