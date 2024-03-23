@@ -249,6 +249,8 @@ document.getElementById('generateGroups').addEventListener('click', function() {
 document.getElementById('downloadExcel').addEventListener('click', generateExcel);
 
 
+// import jsPDF from 'jspdf';
+// import 'jspdf-autotable';
 function generatePDF() {
     var { jsPDF } = window.jspdf;
     const doc = new jsPDF();
