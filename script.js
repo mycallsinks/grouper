@@ -66,8 +66,7 @@ addDetails = () => {
     let firstName = document.getElementById("first_name").value;
     let lastName = document.getElementById("last_name").value;
     let studentNumber = document.getElementById("student_number").value;
-
-
+    
     let studentArr = [firstName, lastName, studentNumber];
 
 }
@@ -107,8 +106,8 @@ testingFuncs = (link) => {
     let index = students.length - 1;
     students[index].index = index;
 
+        generateGroups();
 
-    generateGroups()
 }
 
 // Function to generate groups
