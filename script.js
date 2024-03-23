@@ -2,6 +2,8 @@
 
 //steps
 
+
+
 //get names  in arrays from  user input
 
 
