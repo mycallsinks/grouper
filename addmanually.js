@@ -3,7 +3,7 @@
     const firstNameInput = document.getElementById('first_name');
     const lastNameInput = document.getElementById('last_name');
     const studentNumberInput = document.getElementById('student_number');
-    // const addButton = document.getElementById('add_student');
+    const addButton = document.getElementById('add_student');
 
 
     // Add event listeners for the Enter key press
@@ -40,13 +40,13 @@
 
 
 
-    // studentNumberInput.addEventListener('keypress', function (e) {
-    //     if (e.key === 'Enter') {
-    //         e.preventDefault();
-    //         // Call the function associated with the "++" link
-    //         testingFuncs(addButton);
+    studentNumberInput.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            // Call the function associated with the "++" link
+            testingFuncs(addButton);
 
-    //         // console.log('Called here')
-    //     }
-    // });
+            console.log('bug here')
+        }
+    });
 

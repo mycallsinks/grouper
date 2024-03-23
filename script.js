@@ -58,7 +58,7 @@ $(document).ready(function () {
 // let lastName = document.getElementById("last_name").value;
 // let studentNumber = document.getElementById("student_number").value;
 
-const addButton = document.getElementById('add_student')
+// const addButton = document.getElementById('add_student')
 
 
 addDetails = () => {
