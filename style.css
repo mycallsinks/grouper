@@ -4,6 +4,15 @@
   box-sizing: border-box;
 }
 
+
+body{
+  font-family: 'helvetica';
+
+  font-family: Helvetica, sans-serif;
+
+}
+
+
 .container_holder {
   max-width: 960px;
   margin: 0 auto;
