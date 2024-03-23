@@ -66,7 +66,7 @@ addDetails = () => {
     let firstName = document.getElementById("first_name").value;
     let lastName = document.getElementById("last_name").value;
     let studentNumber = document.getElementById("student_number").value;
-    
+
     let studentArr = [firstName, lastName, studentNumber];
 
 }
@@ -81,6 +81,7 @@ addDetails = () => {
 
 
 // validate first 
+
 
 
 
