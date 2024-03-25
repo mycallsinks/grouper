@@ -91,8 +91,7 @@
                         <label for="numberOfGroups" class="form-label">Number of People Per Group </label>
                         <div class="inputs">
                             <input type="number" class="form-control" id="numberOfGroups" required>
-                            <a class="btn btn-primary" href="#" role="button" id="generateGroups">Generate</a>
-                           
+                            <a class="btn btn-primary" href="#" role="button" id="generateGroups" style="display: none;">Generate</a>
                         </div>
                     </div>
 
@@ -121,6 +120,20 @@
        
 
     </div>
+
+
+    <script>
+        document.getElementById('numberOfGroups').addEventListener('input', function() {
+            var numberOfGroups = parseInt(this.value);
+            var generateButton = document.getElementById('generateGroups');
+            
+            if (numberOfGroups >= 2) {
+                generateButton.style.display = 'inline-block';
+            } else {
+                generateButton.style.display = 'none';
+            }
+        });
+    </script>
 
 
 

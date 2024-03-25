@@ -34,6 +34,7 @@ $(document).ready(function () {
         e.preventDefault();
 
         // Check if all input fields are filled
+
         var inputsFilled = true;
         $('.list_of_students:last').find('input').not('#student_number').each(function() { // Exclude the "Student number" field
             if ($(this).val() === '') {
@@ -41,9 +42,6 @@ $(document).ready(function () {
                 return false; // Exit the loop early if any input is empty
             }
         });
-    
-
-
 
         if (!inputsFilled) {
             // Alert and return if inputs are not filled
@@ -119,13 +117,7 @@ testingFuncs = (link) => {
     let index = students.length - 1;
     students[index].index = index;
 
-   
-
-    //get generate button
     generateGroups();
-
-    
-    
 
 }
 
@@ -145,13 +137,13 @@ function shuffleArray(array) {
     return array;
 }
 
-// check if the number of groups are more than 1
 
 
 // Function to generate groups
 function generateGroups() {
     // studentObjects
     const studentsPerGroup = parseInt(document.getElementById('numberOfGroups').value);
+    
     const numberOfGroups = Math.ceil(students.length / studentsPerGroup);
     const shuffledStudents = shuffleArray([...students]); // Create a copy of the students array and shuffle it
 
@@ -164,6 +156,12 @@ function generateGroups() {
         displayGroup(group, i + 1);
     }
 }
+
+
+// generatebutton
+
+
+
 
 
 
@@ -263,7 +261,7 @@ document.getElementById('generateGroups').addEventListener('click', function() {
     generateGroups();
 });
 
- 
+
 
 // Event listener for the download button
 document.getElementById('downloadExcel').addEventListener('click', generateExcel);
