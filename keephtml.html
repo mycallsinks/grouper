@@ -1,0 +1,63 @@
+<!-- original list of studnets -->
+
+
+<ol id="students_list">
+    <li class="list_of_students" id="getStudents">
+        <div class="student_details">
+            <div class="mb-1">
+                <label for="first_name" class="form-label label_first_name">First name</label>
+                <input type="text" class="form-control" id="first_name" required>
+            </div>
+            <div class="mb-1">
+                <label for="last_name" class="form-label label_last_name">Last name</label>
+                <input type="text" class="form-control" id="last_name" required>
+            </div>
+            <div class="mb-1 position_add_more">
+                <label for="student_number" class="form-label label_student_number">Student number</label>
+        
+                <!-- onclick call a function that's adding the details to the array -->
+                <input type="number" class="form-control" id="student_number" required>
+        
+                <!-- Call validation function before adding more students -->
+                <a onclick="testingFuncs(this)" class="btn btn-primary add_more_students" id="add_student" href="#" role="button">+</a>
+
+        
+            </div>
+        </div>
+    </li>
+</ol>
+
+
+
+
+<!-- js funcction -->
+
+
+<script>
+    const students = [];
+
+testingFuncs = (link) => {
+    // Get the parent <li> element of the clicked link
+    let parentLi = link.closest('.list_of_students');
+
+    // Find input fields within the parent <li>
+    let firstName = parentLi.querySelector('.label_first_name + .form-control').value;
+    let lastName = parentLi.querySelector('.label_last_name + .form-control').value;
+    let studentNumber = parentLi.querySelector('.label_student_number + .form-control').value;
+
+    // Add details to the array
+    students.push({
+        firstName: firstName,
+        lastName: lastName,
+        studentNumber: studentNumber
+    });
+
+    // Assign index after pushing the student object into the array
+    let index = students.length - 1;
+    students[index].index = index;
+
+    generateGroups();
+
+}
+</script>
+

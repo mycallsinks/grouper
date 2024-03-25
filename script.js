@@ -1,12 +1,9 @@
 
-
-//steps
-
-
-
 //get names  in arrays from  user input
 
-
+// add + icon to th last student_details
+//clone the.student list
+//set input vales to the empty strnig
 
 $(document).ready(function () {
     // Hide all the + buttons except the first one
@@ -25,67 +22,30 @@ $(document).ready(function () {
     });
 });
 
-//first last and student number to be shown on the first list of studnet
+
+
+
+// simply show the labes on the first .student_details then hide all the remaining ones except the first .student_details
 
 
 $(document).ready(function () {
-    // Initially hide the labels for all but the first .list_of_students
-    $('.label_first_name').not(':first').hide();
-    $('.label_student_number').not(':first').hide();
-    $('.label_last_name').not(':first').hide();
+
 
     $('#students_list').on('click', '.add_more_students', function (e) {
         e.preventDefault();
-        // Hide all the labels again except for the first .list_of_students
-        // $('.label_first_name, .label_last_name, .label_student_number').not(':first').hide();
+          // Show the labels only for the first .list_of_students
         $('.label_first_name').not(':first').hide();
         $('.label_student_number').not(':first').hide();
         $('.label_last_name').not(':first').hide();
-        // Show the labels only for the first .list_of_students
+      
         $('#students_list .list_of_students:first .label_first_name, #students_list .list_of_students:first .label_last_name, #students_list .list_of_students:first .label_student_number').show();
-        // Hide the + button for all but the last .list_of_students
-        // $('.add_more_students').not(':last').hide();
     });
 });
 
 
 
-// scaped above code
 
-//get names 
-
-//testing
-
-// let firstName = document.getElementById("first_name").value;
-// let lastName = document.getElementById("last_name").value;
-// let studentNumber = document.getElementById("student_number").value;
-
-// const addButton = document.getElementById('add_student')
-
-
-addDetails = () => {
-
-    let firstName = document.getElementById("first_name").value;
-    let lastName = document.getElementById("last_name").value;
-    let studentNumber = document.getElementById("student_number").value;
-
-    let studentArr = [firstName, lastName, studentNumber];
-
-}
-
-
-// next step = to once we add them then will retrive randomly
-
-
-// Define a global variable to store the students array
-
-
-
-
-// validate first 
-
-
-
+// Function to gather all student details and push them into the array
 
 const students = [];
 
@@ -109,10 +69,11 @@ testingFuncs = (link) => {
     let index = students.length - 1;
     students[index].index = index;
 
-        generateGroups();
+    generateGroups();
 
 }
 
+// fixing monday bug ends here
 // Function to generate groups
 
 
@@ -127,14 +88,6 @@ function shuffleArray(array) {
     }
     return array;
 }
-
-// Event listener for the "Generate" button
-// document.getElementById('generateGroups').addEventListener('click', function() {
-//     generateGroups();
-// });
-
-
-
 
 
 
@@ -196,38 +149,7 @@ document.getElementById('generateGroups').addEventListener('click', generateGrou
 
 
 
-// downlaoding as excel shee
-// // Function to generate and download Excel file
-// function generateExcel() {
-//     const workbook = XLSX.utils.book_new();
-//     const worksheet = XLSX.utils.aoa_to_sheet([
-//         ['Group', 'First Name', 'Last Name', 'Student Number'] // Column headers
-//     ]);
-
-    
-
-//     // Iterate through each group
-//     document.querySelectorAll('.group').forEach((groupContainer, groupNumber) => {
-//         // Iterate through each student row in the group
-//         groupContainer.querySelectorAll('.student-row').forEach(studentElement => {
-//             // Extract student information from the row
-//             const cells = studentElement.querySelectorAll('.cell');
-//             const firstName = cells[0].textContent.trim();
-//             const lastName = cells[1].textContent.trim();
-//             const studentNum = cells[2].textContent.trim();
-//             // Add student data to the worksheet
-//             XLSX.utils.sheet_add_aoa(worksheet, [
-//                 [groupNumber + 1, firstName, lastName, studentNum] // Group number is the index + 1
-//             ], { origin: -1 });
-//         });
-//     });
-
-//     // Add the worksheet to the workbook
-//     XLSX.utils.book_append_sheet(workbook, worksheet, 'Groups');
-
-//     // Generate Excel file and trigger download
-//     XLSX.writeFile(workbook, 'groups.xlsx');
-// }
+// excel sheet
 
 function generateExcel() {
     const workbook = XLSX.utils.book_new();
