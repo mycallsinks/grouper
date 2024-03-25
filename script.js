@@ -35,12 +35,14 @@ $(document).ready(function () {
 
         // Check if all input fields are filled
         var inputsFilled = true;
-        $('.list_of_students:last').find('input').each(function() {
+        $('.list_of_students:last').find('input').not('#student_number').each(function() { // Exclude the "Student number" field
             if ($(this).val() === '') {
                 inputsFilled = false;
                 return false; // Exit the loop early if any input is empty
             }
         });
+
+
 
         if (!inputsFilled) {
             // Alert and return if inputs are not filled
@@ -253,7 +255,7 @@ document.getElementById('generateGroups').addEventListener('click', function() {
     generateGroups();
 });
 
-
+ 
 
 // Event listener for the download button
 document.getElementById('downloadExcel').addEventListener('click', generateExcel);
