@@ -197,15 +197,57 @@ document.getElementById('generateGroups').addEventListener('click', generateGrou
 
 
 // downlaoding as excel shee
-// Function to generate and download Excel file
+// // Function to generate and download Excel file
+// function generateExcel() {
+//     const workbook = XLSX.utils.book_new();
+//     const worksheet = XLSX.utils.aoa_to_sheet([
+//         ['Group', 'First Name', 'Last Name', 'Student Number'] // Column headers
+//     ]);
+
+    
+
+//     // Iterate through each group
+//     document.querySelectorAll('.group').forEach((groupContainer, groupNumber) => {
+//         // Iterate through each student row in the group
+//         groupContainer.querySelectorAll('.student-row').forEach(studentElement => {
+//             // Extract student information from the row
+//             const cells = studentElement.querySelectorAll('.cell');
+//             const firstName = cells[0].textContent.trim();
+//             const lastName = cells[1].textContent.trim();
+//             const studentNum = cells[2].textContent.trim();
+//             // Add student data to the worksheet
+//             XLSX.utils.sheet_add_aoa(worksheet, [
+//                 [groupNumber + 1, firstName, lastName, studentNum] // Group number is the index + 1
+//             ], { origin: -1 });
+//         });
+//     });
+
+//     // Add the worksheet to the workbook
+//     XLSX.utils.book_append_sheet(workbook, worksheet, 'Groups');
+
+//     // Generate Excel file and trigger download
+//     XLSX.writeFile(workbook, 'groups.xlsx');
+// }
+
 function generateExcel() {
     const workbook = XLSX.utils.book_new();
     const worksheet = XLSX.utils.aoa_to_sheet([
         ['Group', 'First Name', 'Last Name', 'Student Number'] // Column headers
     ]);
 
+    let rowNumber = 1; // Start with row 1
+
     // Iterate through each group
     document.querySelectorAll('.group').forEach((groupContainer, groupNumber) => {
+        // Insert blank rows if it's not the first group
+        if (groupNumber > 0) {
+            XLSX.utils.sheet_add_aoa(worksheet, [
+                ['', '', '', ''], // First blank row
+                ['', '', '', '']  // Second blank row
+            ], { origin: rowNumber });
+            rowNumber += 2; // Increment row number by 2
+        }
+        
         // Iterate through each student row in the group
         groupContainer.querySelectorAll('.student-row').forEach(studentElement => {
             // Extract student information from the row
@@ -213,10 +255,12 @@ function generateExcel() {
             const firstName = cells[0].textContent.trim();
             const lastName = cells[1].textContent.trim();
             const studentNum = cells[2].textContent.trim();
+            
             // Add student data to the worksheet
             XLSX.utils.sheet_add_aoa(worksheet, [
                 [groupNumber + 1, firstName, lastName, studentNum] // Group number is the index + 1
-            ], { origin: -1 });
+            ], { origin: rowNumber });
+            rowNumber++; // Increment row number
         });
     });
 
@@ -229,12 +273,7 @@ function generateExcel() {
 
 
 
-// document.getElementById('generateGroups').addEventListener('click', function() {
-//     // Show the download button
-//     document.getElementById('downloadExcel').style.display = 'block';
-//     // Call the function to generate groups
-//     generateGroups();
-// });
+
 
 
 document.getElementById('generateGroups').addEventListener('click', function() {
@@ -253,6 +292,7 @@ document.getElementById('downloadExcel').addEventListener('click', generateExcel
 
 // import jsPDF from 'jspdf';
 // import 'jspdf-autotable';
+
 function generatePDF() {
     var { jsPDF } = window.jspdf;
     const doc = new jsPDF();
@@ -266,6 +306,12 @@ function generatePDF() {
 
     // Iterate through each group
     document.querySelectorAll('.group').forEach((groupContainer, groupNumber) => {
+        // Insert blank rows if it's not the first group
+        if (groupNumber > 0) {
+            data.push(['', '', '', '']); // First blank row
+            data.push(['', '', '', '']); // Second blank row
+        }
+        
         // Iterate through each student row in the group
         groupContainer.querySelectorAll('.student-row').forEach(studentElement => {
             // Extract student information from the row
@@ -289,6 +335,8 @@ function generatePDF() {
     // Save the PDF and trigger download
     doc.save('groups.pdf');
 }
+
+
 
 // document.getElementById('downloadPDF').addEventListener('click', generatePDF);
 
