@@ -5,22 +5,64 @@
 //clone the.student list
 //set input vales to the empty strnig
 
+// $(document).ready(function () {
+//     // Hide all the + buttons except the first one
+//     $('.add_more_students:not(:first)').hide();
+
+//     $('#students_list').on('click', '.add_more_students', function (e) {
+//         e.preventDefault();
+//         var newStudent = $('.list_of_students').first().clone();
+
+//         newStudent.find('input').val('');
+//         $('#students_list').append(newStudent);
+//         // Hide all the + buttons again
+//         $('.add_more_students').hide();
+//         // Show the + button only for the last .list_of_students
+//         $('#students_list .list_of_students:last .add_more_students').show();
+//     });
+// });
+
+
+
+
+// debug this
 $(document).ready(function () {
     // Hide all the + buttons except the first one
     $('.add_more_students:not(:first)').hide();
 
     $('#students_list').on('click', '.add_more_students', function (e) {
         e.preventDefault();
-        var newStudent = $('.list_of_students').first().clone();
 
-        newStudent.find('input').val('');
-        $('#students_list').append(newStudent);
+        // Check if all input fields are filled
+        var inputsFilled = true;
+        $('.list_of_students:last').find('input').each(function() {
+            if ($(this).val() === '') {
+                inputsFilled = false;
+                return false; // Exit the loop early if any input is empty
+            }
+        });
+
+        if (!inputsFilled) {
+            // Alert and return if inputs are not filled
+            alert("Please fill in all fields before adding more students.");
+            return 0; // Exit the function early if inputs are not filled
+        }
+            // If all input fields are filled, proceed to add more input fields
+            var newStudent = $('.list_of_students').first().clone();
+            newStudent.find('input').val('');
+            $('#students_list').append(newStudent);
+    
+
         // Hide all the + buttons again
         $('.add_more_students').hide();
+
         // Show the + button only for the last .list_of_students
         $('#students_list .list_of_students:last .add_more_students').show();
     });
 });
+
+
+//end debug this
 
 
 
@@ -59,12 +101,17 @@ testingFuncs = (link) => {
     let studentNumber = parentLi.querySelector('.label_student_number + .form-control').value;
 
     // Add details to the array
-    students.push({
-        firstName: firstName,
-        lastName: lastName,
-        studentNumber: studentNumber
-    });
 
+    if(firstName !== '' || lastName !== '') {
+        students.push({
+            firstName: firstName,
+            lastName: lastName,
+            studentNumber: studentNumber
+        });
+    
+    } 
+
+    
     // Assign index after pushing the student object into the array
     let index = students.length - 1;
     students[index].index = index;
