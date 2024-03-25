@@ -41,6 +41,7 @@ $(document).ready(function () {
                 return false; // Exit the loop early if any input is empty
             }
         });
+    
 
 
 
@@ -118,7 +119,13 @@ testingFuncs = (link) => {
     let index = students.length - 1;
     students[index].index = index;
 
+   
+
+    //get generate button
     generateGroups();
+
+    
+    
 
 }
 
@@ -138,6 +145,7 @@ function shuffleArray(array) {
     return array;
 }
 
+// check if the number of groups are more than 1
 
 
 // Function to generate groups
