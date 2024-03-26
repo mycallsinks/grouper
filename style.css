@@ -4,14 +4,11 @@
   box-sizing: border-box;
 }
 
-
-body{
-  font-family: 'helvetica';
+body {
+  font-family: "helvetica";
 
   font-family: Helvetica, sans-serif;
-
 }
-
 
 .container_holder {
   max-width: 960px;
@@ -36,12 +33,9 @@ body{
   padding: 0 5px;
 }
 
-
-nav{
+nav {
   padding: 5px 0px !important;
 }
-
-
 
 .navbar-brand {
   /* color: rgb(5, 5, 82); */
@@ -186,7 +180,8 @@ nav .container-fluid {
   gap: 10px;
 }
 
-#downloadExcel,#downloadPDF {
+#downloadExcel,
+#downloadPDF {
   width: fit-content;
   border: 0;
   border-radius: 5px;
@@ -257,16 +252,51 @@ body {
   min-width: 420px !important;
 }
 
+
 body {
+  /* For webkit (Safari, Chrome) */
+  background: -webkit-linear-gradient(
+      to right,
+      rgba(255, 127, 95, 1) 0%,
+      /* rgba(254, 180, 123, 25%) 25%, */
+      rgba(255, 127, 95, 50%) 50%,
+      rgba(254, 180, 123, 75%) 75%,
+      rgba(255, 127, 95, 100%) 100%
+  );
+  /* For Mozilla Firefox */
+  background: -moz-linear-gradient(
+      to right,
+      rgba(255, 127, 95, 1) 0%,
+      /* rgba(254, 180, 123, 25%) 25%, */
+      rgba(255, 127, 95, 50%) 50%,
+      rgba(254, 180, 123, 75%) 75%,
+      rgba(255, 127, 95, 100%) 100%
+  );
+  /* For Opera */
+  background: -o-linear-gradient(
+      to right,
+      rgba(255, 127, 95, 1) 0%,
+      /* rgba(254, 180, 123, 25%) 25%, */
+      rgba(255, 127, 95, 50%) 50%,
+      rgba(254, 180, 123, 75%) 75%,
+      rgba(255, 127, 95, 100%) 100%
+  );
+  /* Standard syntax */
   background: linear-gradient(
-    to right,
-    rgba(255, 127, 95, 0.708),
-    rgba(254, 180, 123, 0.702),
-    rgba(255, 127, 95, 0.708),
-    rgba(254, 180, 123, 0.702),
-    rgba(255, 127, 95, 0.708)
+      to right,
+      rgba(255, 127, 95, 1) 0%,
+      /* rgba(254, 180, 123, 25%) 25%, */
+      rgba(255, 127, 95, 50%) 50%,
+      rgba(254, 180, 123, 75%) 75%,
+      rgba(255, 127, 95, 100%) 100%
   );
 }
+
+
+
+
+
+
 
 .grouping .form-label {
   text-align: center !important;
