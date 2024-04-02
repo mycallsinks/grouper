@@ -43,6 +43,10 @@
     <!-- jsPDF libray -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script> -->
 
+
+    <!-- dropzone js library -->
+   
+<!-- <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" /> -->
 </head>
 
 <body>
@@ -80,11 +84,12 @@
 
                 <div class="form_students my-4">
 
+                    <label for="inputGroupFile02"> (Drop or Click) to choose (excel files only)</label>
                     <div class="input-group mb-3">
-                        <input type="file" class="form-control" id="inputGroupFile02" accept=".xlsx, .xls, .csv, .txt">
+                        <input type="file" class="form-control dropzone" id="inputGroupFile02" accept=".xlsx, .xls, .csv, .txt">
                     </div>
-
                 </div>
+
 
                 <div class="grouping">
                     <div class="mb-3">
@@ -93,6 +98,10 @@
                             <input type="number" class="form-control" id="numberOfGroups" required>
                             <a class="btn btn-primary" href="#" role="button" id="generateGroups" style="display: none;">Generate</a>
                         </div>
+
+                    
+
+                       
                     </div>
 
 
@@ -156,7 +165,9 @@
     <script src="jspdfautable.js"></script>
     <!-- adding more studnets -->
 
+<!-- dropzone -->
 
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
 
 </body>
 
