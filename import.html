@@ -44,9 +44,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 
 
-    <!-- dropzone js library -->
-   
-<!-- <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" /> -->
+
+    <!-- dropzone rel css link -->
+    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 </head>
 
 <body>
@@ -84,10 +84,16 @@
 
                 <div class="form_students my-4">
 
-                    <label for="inputGroupFile02"> (Drop or Click) to choose (excel files only)</label>
+                    <!-- <label for="inputGroupFile02"> (Drop or Click) to choose (excel files only)</label>
                     <div class="input-group mb-3">
                         <input type="file" class="form-control dropzone" id="inputGroupFile02" accept=".xlsx, .xls, .csv, .txt">
-                    </div>
+                    </div> -->
+
+                <div class="input_holder inputgroup">
+                    <label for="inputGroupFile02"> (Drop or Click) to choose (excel files only)</label>
+                    <input type="file" placeholder="drag"  class="form-contol dropzone" id="inputGroupFile02" accept=".xlsx, .xls, .csv, .txt">
+                </div>
+
                 </div>
 
                 <div class="grouping">
@@ -157,14 +163,14 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
-    <!-- <script src="path/to/jspdf.plugin.autotable.js"></script> -->
     <!-- <script src="./node_modules/jspdf-autotable/dist/jspdf.plugin.autotable.js"></script> -->
     <script src="jspdfautable.js"></script>
     <!-- adding more studnets -->
 
 <!-- dropzone -->
 
-    <!-- <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script> -->
+<!-- dropz zone link js librayr -->
+<script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
 
 </body>
 
